@@ -2,10 +2,16 @@ import React from "react";
 // import Navbar from "react-bootstrap/Navbar";
 // import Nav from "react-bootstrap/Nav";
 import "./Header.css";
-import { BrowserRouter as Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+} from "react-router-dom";
 
 const Header = (props) => {
-  // let { path, url } = useRouteMatch();
+  let { path, url } = useRouteMatch();
 
   return (
     <div className="header">

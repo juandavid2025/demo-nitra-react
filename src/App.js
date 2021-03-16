@@ -4,7 +4,7 @@ import Title from "./components/Title/Title";
 import Attacks from "./components/Attacks/Attacks";
 import Weaknesses from "./components/Weaknesses/Weaknesses";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class App extends Component {
   state = {
