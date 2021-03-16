@@ -1,40 +1,43 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import Header from "./components/Header";
 import Title from "./components/Title/Title";
 import Attacks from "./components/Attacks/Attacks";
 import Weaknesses from "./components/Weaknesses/Weaknesses";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
-class App extends Component{
-
-  state={
+class App extends Component {
+  state = {
     showAttacks: false,
-    showWeaknesses: false
-  }
+    showWeaknesses: false,
+  };
 
-  toggleShowAttacks= () =>{
+  toggleShowAttacks = () => {
     const newValue = !this.state.showAttacks;
-    this.setState({showAttacks: newValue});
-  }
+    this.setState({ showAttacks: newValue });
+  };
 
-  toggleShowWeaknesses= ()=>{
+  toggleShowWeaknesses = () => {
     const newValue = !this.state.showWeaknesses;
-    this.setState({showWeaknesses: newValue});
-  }
+    this.setState({ showWeaknesses: newValue });
+  };
 
-  render(){
+  render() {
     let weaknesses = null;
-    if(this.state.showWeaknesses){
+    if (this.state.showWeaknesses) {
       weaknesses = <Weaknesses />;
     }
-    return <div>
-      <Header attacksClicked={this.toggleShowAttacks} weaknessesClicked={this.toggleShowWeaknesses} />
-      <Title />
-      { this.state.showAttacks ? <Attacks /> : null}
-      {weaknesses}
-    </div>
+    return (
+      <div>
+        <Header
+          attacksClicked={this.toggleShowAttacks}
+          weaknessesClicked={this.toggleShowWeaknesses}
+        />
+        <Title />
+        {this.state.showAttacks ? <Attacks /> : null}
+        {weaknesses}
+      </div>
+    );
   }
 }
 
 export default App;
-
